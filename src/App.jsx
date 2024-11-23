@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -13,9 +13,8 @@ import { wrap } from "@motionone/utils";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-
-
 function ParallaxText({ children, baseVelocity = 100 }) {
+  const [isPaused, setIsPaused] = useState(false);
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -31,6 +30,8 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   const directionFactor = useRef(1);
 
   useAnimationFrame((t, delta) => {
+    if (isPaused) return;
+
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
     // Change scroll direction dynamically
@@ -44,6 +45,10 @@ function ParallaxText({ children, baseVelocity = 100 }) {
     baseX.set(baseX.get() + moveBy);
   });
 
+  const togglePause = () => {
+    setIsPaused(!isPaused);
+  };
+
   return (
     <div className="parallax">
       <motion.div className="scroller" style={{ x }}>
@@ -52,37 +57,33 @@ function ParallaxText({ children, baseVelocity = 100 }) {
         <span>{children} </span>
         <span>{children} </span>
       </motion.div>
+      <button 
+        onClick={togglePause} 
+        className="pause-button"
+      >
+        {isPaused ? 'Resume' : 'Pause'}
+      </button>
     </div>
   );
 }
 
 function App() {
   return (
-<>
-    <section className="app">
-
-
-<i className="fa fa-solid fa-user" aria-hidden="true"></i>
-
-      <ParallaxText baseVelocity={-2}>Hello, My name is Robert</ParallaxText>
-      <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
-
-
-    
-     
-    </section>
-
-<Link to="about" className="btn btn-primary">About</Link>
-
-
-</>
+    <>
+      <h1>Parallax Text</h1>
+      <section className="app">
+        <ParallaxText baseVelocity={-3}>react, Bootstrap, NodeJS, Mongodb,</ParallaxText>
+      
+        <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
+      </section>
+      <Link to="about" className="btn btn-primary">About</Link>
+    </>
   );
 }
+
 ParallaxText.propTypes = {
   children: PropTypes.node.isRequired,
   baseVelocity: PropTypes.number,
-
-
 }
 
 export default App;
