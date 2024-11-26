@@ -194,3 +194,6 @@ img {
   background-color: #e0e
   
 }
+.app{
+  color: var(--white);
+}

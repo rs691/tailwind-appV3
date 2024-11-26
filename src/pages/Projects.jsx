@@ -1,4 +1,4 @@
-import "./App.css";
+
 import { useRef, useState } from "react";
 import {
   motion,
@@ -12,8 +12,8 @@ import {
 import { wrap } from "@motionone/utils";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import coolPic from './assets/coolPic.svg';
-
+// import coolPic from './assets/coolPic.svg';
+import earth from '../assets/earth.svg';
 
 function ParallaxText({ children, baseVelocity = 100 }) {
   const [isPaused, setIsPaused] = useState(false);
@@ -71,18 +71,18 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   );
 }
 
-function App() {
+function Projects() {
   return (
     <>
+     <Link to="about" className="btn btn-primary">About</Link>
       <section className="app">
         <ParallaxText baseVelocity={-3}>react, Bootstrap, NodeJS, Mongodb,</ParallaxText>
-        <img src={coolPic} alt="coolPic" />
-      
+        {/* <img src={coolPic} alt="coolPic" /> */}
+        <img src={earth} alt="earth" className="w-2/3" />
         <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
       </section>
      
-      <Link to="about" className="btn btn-primary">About</Link>
-      <Link to="projects" className="btn btn-primary">Earth</Link>
+     
     </>
   );
 }
@@ -92,4 +92,4 @@ ParallaxText.propTypes = {
   baseVelocity: PropTypes.number,
 }
 
-export default App;
+export default Projects;
