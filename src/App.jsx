@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <section className="app">
-        <ParallaxText baseVelocity={-3}>react, Bootstrap, NodeJS, Mongodb,</ParallaxText>
+        <ParallaxText baseVelocity={-3}>Software dampingevelopment</ParallaxText>
         <img src={coolPic} alt="coolPic" />
       
         <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>

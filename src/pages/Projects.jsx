@@ -76,7 +76,7 @@ function Projects() {
     <>
      <Link to="about" className="btn btn-primary">About</Link>
       <section className="app">
-        <ParallaxText baseVelocity={-3}>react, Bootstrap, NodeJS, Mongodb,</ParallaxText>
+        <ParallaxText baseVelocity={-3}>Software development</ParallaxText>
         {/* <img src={coolPic} alt="coolPic" /> */}
         <img src={earth} alt="earth" className="w-2/3" />
         <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
