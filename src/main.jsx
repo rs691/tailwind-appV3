@@ -6,8 +6,11 @@ import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Project1 from './pages/Project1.jsx'
 import Project2 from './pages/Project2.jsx'
+import Contact from './pages/Contact.jsx'
+
 
 import { createHashRouter, RouterProvider } from 'react-router-dom'
+import MotionCards from './components/MotionCards.jsx'
 
 const router = createHashRouter([
   {
@@ -17,6 +20,14 @@ const router = createHashRouter([
   {
     path: '/about',
     element: <About/>,
+  },
+  {
+    path: '/motionCards',
+    element: <MotionCards/>
+  },
+  {
+    path: '/contact',
+    element: <Contact/>
   },
   {
 path: '/projects',

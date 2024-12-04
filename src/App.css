@@ -181,7 +181,7 @@ img {
 }
 
 
-.pause-button {
+/* .pause-button {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -193,7 +193,7 @@ img {
 .pause-button:hover {
   background-color: #e0e
   
-}
+} */
 .app{
   color: var(--white);
 }
