@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useState } from "react";
+import { useRef} from "react";
 import {
   motion,
   useScroll,
@@ -11,12 +11,13 @@ import {
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import coolPic from './assets/coolPic.svg';
+import MotionCards from "./components/MotionCards";
 
 
 function ParallaxText({ children, baseVelocity = 100 }) {
-  const [isPaused, setIsPaused] = useState(false);
+ 
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -32,7 +33,7 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   const directionFactor = useRef(1);
 
   useAnimationFrame((t, delta) => {
-    if (isPaused) return;
+   
 
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
@@ -47,9 +48,7 @@ function ParallaxText({ children, baseVelocity = 100 }) {
     baseX.set(baseX.get() + moveBy);
   });
 
-  const togglePause = () => {
-    setIsPaused(!isPaused);
-  };
+
 
   return (
     <div className="parallax">
@@ -61,12 +60,7 @@ function ParallaxText({ children, baseVelocity = 100 }) {
       </motion.div>
       
       
-      <button 
-        onClick={togglePause} 
-        className="pause-button"
-      >
-        {isPaused ? 'Resume' : 'Pause'}
-      </button>
+      
     </div>
   );
 }
@@ -75,14 +69,27 @@ function App() {
   return (
     <>
       <section className="app">
-        <ParallaxText baseVelocity={-3}>Software dampingevelopment</ParallaxText>
+        <ParallaxText baseVelocity={-3}>Software Development</ParallaxText>
+     
         <img src={coolPic} alt="coolPic" />
       
         <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
       </section>
-     
-      <Link to="about" className="btn btn-primary">About</Link>
+      <MotionCards />
+      <button className="outline outline-offset-2 outline-pink-500">Button C</button>
+      {/* <Link to="about" className="btn btn-primary">About</Link>
       <Link to="projects" className="btn btn-primary">Earth</Link>
+      <Link to="hero" className="btn btn-primary">Hero</Link> */}
+      <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+		<h1 className="text-4xl font-bold leading-none sm:text-5xl">Hello<span className="text-violet-400 dark:text-violet-600">laborum doloribus</span> delectus
+		</h1>
+		<p className="px-8 mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
+		<div className="flex flex-wrap justify-center">
+			<button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50 outline outline-offset-2 outline-pink-500">Get started</button>
+			<button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-violet-400 dark:bg-violet-600 text-gray-900 dark:text-gray-50 outline outline-offset-2 outline-pink-500">Learn more</button>
+		</div>
+	</div>
+
     </>
   );
 }
