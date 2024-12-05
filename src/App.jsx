@@ -11,9 +11,16 @@ import {
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 // import { Link } from 'react-router-dom';
 import coolPic from './assets/coolPic.svg';
 import MotionCards from "./components/MotionCards";
+=======
+import { Link } from 'react-router-dom';
+// import coolPic from './assets/coolPic.svg';
+import landingFrontImage from './assets/landingFrontImaga.svg';
+import LandingUI from "./pages/LandingUI";
+>>>>>>> a9afa9f30ce9e01afb50052f91181d89d1c7904c
 
 
 function ParallaxText({ children, baseVelocity = 100 }) {
@@ -69,16 +76,25 @@ function App() {
   return (
     <>
       <section className="app">
+<<<<<<< HEAD
         <ParallaxText baseVelocity={-3}>Software Development</ParallaxText>
      
         <img src={coolPic} alt="coolPic" />
+=======
+        <ParallaxText baseVelocity={-3}>Software dampingevelopment</ParallaxText>
+        {/* <img src={coolPic} alt="coolPic" /> */}
+        <img src={landingFrontImage} alt="front" />
+>>>>>>> a9afa9f30ce9e01afb50052f91181d89d1c7904c
       
         <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
+
+
       </section>
       <MotionCards />
       <button className="outline outline-offset-2 outline-pink-500">Button C</button>
       {/* <Link to="about" className="btn btn-primary">About</Link>
       <Link to="projects" className="btn btn-primary">Earth</Link>
+<<<<<<< HEAD
       <Link to="hero" className="btn btn-primary">Hero</Link> */}
       <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
 		<h1 className="text-4xl font-bold leading-none sm:text-5xl">Hello<span className="text-violet-400 dark:text-violet-600">laborum doloribus</span> delectus
@@ -90,6 +106,11 @@ function App() {
 		</div>
 	</div>
 
+=======
+      <Link to="contact" className="btn btn-primary">Contact</Link>
+      <Link to="projects" className="btn btn-primary">Projects</Link>
+      <LandingUI/>
+>>>>>>> a9afa9f30ce9e01afb50052f91181d89d1c7904c
     </>
   );
 }

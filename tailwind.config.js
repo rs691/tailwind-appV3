@@ -9,6 +9,7 @@ export default {
       center: true,
       },
       colors: {
+        'transparent': 'transparent',
         'tekhelet': {
           DEFAULT: '#503674',
           100: '#100b17',

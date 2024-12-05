@@ -180,7 +180,19 @@ img {
 }
 
 
-
+.pause-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #FECC1B;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.pause-button:hover {
+  background-color: #e0e
+  
+}
 .app{
   
  
