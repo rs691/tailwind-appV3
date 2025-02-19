@@ -12,9 +12,10 @@ import {
 import { wrap } from "@motionone/utils";
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import coolPic from './assets/coolPic.svg';
-import landingFrontImage from './assets/landingFrontImaga.svg';
+// // import coolPic from './assets/coolPic.svg';
+// import landingFrontImage from './assets/landingFrontImaga.svg';
 import LandingUI from "./pages/LandingUI";
+import earth from './assets/earth.svg'
 
 
 function ParallaxText({ children, baseVelocity = 100 }) {
@@ -79,7 +80,8 @@ function App() {
       <section className="app">
         <ParallaxText baseVelocity={-3}>Software dampingevelopment</ParallaxText>
         {/* <img src={coolPic} alt="coolPic" /> */}
-        <img src={landingFrontImage} alt="front" />
+        {/* <img src={landingFrontImage} alt="front" /> */}
+        <img src={earth} alt="earth"/>
       
         <ParallaxText baseVelocity={3}>and im a software developer</ParallaxText>
 
