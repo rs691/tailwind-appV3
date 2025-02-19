@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wdth,wght@0,50..150,100..900;1,50..150,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Pro:wght@400;600&display=swap');
 
 
 body {
@@ -182,7 +181,7 @@ img {
 }
 
 
-/* .pause-button {
+.pause-button {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -194,7 +193,12 @@ img {
 .pause-button:hover {
   background-color: #e0e
   
-} */
+}
 .app{
-  color: var(--white);
+  
+ 
+  justify-content: center;
+  align-items: center;
+height:50%;
+ 
 }
